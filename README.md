@@ -77,10 +77,7 @@ IAM	Secure Permissions
 💼 Author
 Wilfredo Rodriguez
 AWS | Cloud Security | Automation
-GitHub Profile
 
-vbnet
-Copy
-Edit
+
 
 
