@@ -35,3 +35,52 @@ guardduty-threat-detection/
 ├── lambda/
 │   └── quarantine-instance.py
 
+🚀 Setup Guide
+✅ Step 1: Enable GuardDuty
+Go to AWS Console → GuardDuty → Click Enable
+
+Wait for service to initialize and start scanning
+
+✅ Step 2: Create SNS Topic
+See sns/sns-setup-instructions.md
+
+✅ Step 3: Create EventBridge Rule
+Use the pattern in eventbridge/cloudwatch-event-pattern.json
+
+Target = SNS Topic
+
+✅ Step 4: Add IAM Role
+Use the policy in iam/guardduty-sns-lambda-policy.json
+
+Attach it to the Lambda function (if used)
+
+✅ Step 5: (Optional) Deploy Lambda
+Deploy lambda/quarantine-instance.py
+
+Triggered via EventBridge
+
+Stops the compromised EC2 instance
+
+🧰 Tools & Services
+Tool	Purpose
+GuardDuty	Threat Detection
+SNS	Alert Delivery
+EventBridge	Trigger GuardDuty Alerts
+Lambda	Auto-Remediation (optional)
+IAM	Secure Permissions
+
+📌 Status
+✅ MVP Complete
+📊 Optional: Add Power BI dashboard for alert trends
+🔁 Improvements coming soon
+
+💼 Author
+Wilfredo Rodriguez
+AWS | Cloud Security | Automation
+GitHub Profile
+
+vbnet
+Copy
+Edit
+
+
